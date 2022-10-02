@@ -6,12 +6,6 @@ Config = {}
 
 Config.Distance = 5.0
 
-Config.Price = {
-	clotheshop = 500,
-	barbershop = 250,
-	tattooshop = 700
-}
-
 Config.Translation = {
 	--| Blips
 	Blip = {
@@ -69,6 +63,9 @@ Config.Translation = {
 	}
 }
 
+-- If Clothshop is public then job = false 
+-- if clotheshop is under job then  job = {'jobname','jobname'} there is no limit with jobs 
+
 Config.ClothingShops = {
 	{
         blip = true, -- Blip enabled?
@@ -77,6 +74,8 @@ Config.ClothingShops = {
 		color = 47, -- The Blip color. List: https://docs.fivem.net/docs/game-references/blips/#blip-colors
         distance = 7, -- Distance to show text ui prompt
 		scale = 0.7 -- How big the blip should be
+		jobs = false,		--allowed jobs and put false for public and jobs will always be like ('jobname','jobname')
+		price = 100 , 		-- price can b 0 
     },
 
 	{
@@ -85,7 +84,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -94,7 +95,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -103,7 +106,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -112,7 +117,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -121,7 +128,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -130,7 +139,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -139,7 +150,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -148,7 +161,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -157,7 +172,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
     {
@@ -166,7 +183,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
     {
@@ -175,7 +194,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
     {
@@ -184,7 +205,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -193,7 +216,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -202,7 +227,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 3.5,
-		scale = 0.7
+		scale = 0.7,
+		jobs = ('ambulance'),
+		price = 100,
 	},
 
 	{
@@ -211,7 +238,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 3.5,
-		scale = 0.7
+		scale = 0.7,
+		jobs = {'police'},
+		price = 100,
 	},
 
 	{
@@ -220,7 +249,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 2.5,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -229,7 +260,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 2.5,
-		scale = 0.7
+		scale = 0.7,
+		jobs = {'police'},
+		price = 100,
 	},
 
 	{
@@ -238,7 +271,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 2.5,
-		scale = 0.7
+		scale = 0.7,
+		jobs = {'police'},
+		price = 100,
 	},
 
 	{
@@ -247,7 +282,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 2.5,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 
 	{
@@ -256,7 +293,9 @@ Config.ClothingShops = {
 		type = 73,
 		color = 47,
 		distance = 2.5,
-		scale = 0.7
+		scale = 0.7,
+		jobs = false,
+		price = 100,
 	},
 }
 
@@ -276,7 +315,8 @@ Config.BarberShops = {
 		type = 71,
 		color = 47,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -285,7 +325,8 @@ Config.BarberShops = {
 		type = 71,
 		color = 47,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -294,7 +335,8 @@ Config.BarberShops = {
 		type = 71,
 		color = 47,
 		distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -303,7 +345,8 @@ Config.BarberShops = {
 		type = 71,
 		color = 47,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -312,7 +355,8 @@ Config.BarberShops = {
 		type = 71,
 		color = 47,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -321,7 +365,8 @@ Config.BarberShops = {
 		type = 71,
 		color = 47,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -330,7 +375,8 @@ Config.BarberShops = {
 		type = 71,
 		color = 47,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 }
 
@@ -341,7 +387,8 @@ Config.TattooShops = {
 		type = 75,
 		color = 1,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -350,7 +397,8 @@ Config.TattooShops = {
 		type = 75,
 		color = 1,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -359,7 +407,8 @@ Config.TattooShops = {
 		type = 75,
 		color = 1,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -368,7 +417,8 @@ Config.TattooShops = {
 		type = 75,
 		color = 1,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -377,7 +427,8 @@ Config.TattooShops = {
 		type = 75,
 		color = 1,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 
     {
@@ -386,6 +437,7 @@ Config.TattooShops = {
 		type = 75,
 		color = 1,
         distance = 7,
-		scale = 0.7
+		scale = 0.7,
+		price = 100 ,
     },
 }
