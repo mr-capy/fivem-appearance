@@ -93,7 +93,6 @@ CreateThread(function()
     while true do
         local sleep = 1500
         local playerCoords, inClothingShop, inBarberShop, inTattooShop, currentZone = GetEntityCoords(PlayerPedId()), false, false, false, nil
-	local playerjob = ESX.PlayerData.job.name
 
         for i=1, #Config.ClothingShops do
             local dist = #(playerCoords - Config.ClothingShops[i].coords)
