@@ -3,7 +3,7 @@
 ---------------------------------------------------------------
 
 local savedOutfits = {}
-local LastZone, CurrentAction, hasAlreadyEnteredMarker = nil, nil, false
+local LastZone, CurrentAction, hasAlreadyEnteredMarker, currentZone = nil, nil, false, nil
 
 ESX = exports["es_extended"]:getSharedObject()
 
@@ -73,16 +73,33 @@ CreateThread(function()
     end
 end)
 
+function isPlayerAllowed(Shops)
+    local playerjob = ESX.PlayerData.job.name
+    local isallowed = false
+        if type(Shops.jobs) == 'table' then
+            for k,v in ipairs(Shops.jobs) do
+                if playerjob == v or not v then
+                    isallowed = true
+                end
+                Wait(500)
+            end
+        else
+            isallowed = true
+        end
+        return isallowed
+end
+
 CreateThread(function()
     while true do
         local sleep = 1500
         local playerCoords, inClothingShop, inBarberShop, inTattooShop, currentZone = GetEntityCoords(PlayerPedId()), false, false, false, nil
+	local playerjob = ESX.PlayerData.job.name
 
         for i=1, #Config.ClothingShops do
             local dist = #(playerCoords - Config.ClothingShops[i].coords)
             if dist <= Config.Distance then
                 sleep = 0
-                if dist <= Config.ClothingShops[i].distance then
+                if dist <= Config.ClothingShops[i].distance and isPlayerAllowed(Config.ClothingShops[i]) then
                     inClothingShop, currentZone = true, i
                 end
             end
@@ -176,7 +193,7 @@ CreateThread(function()
                                     TriggerEvent('esx:restoreLoadout')
 							        ESX.SetPlayerData('ped', PlayerPedId())
                                 end
-                            end, "barbershop")
+                            end, "BarberShops",currentZone)
 						else
                             TriggerEvent('esx:restoreLoadout')
 							ESX.SetPlayerData('ped', PlayerPedId())
@@ -205,7 +222,7 @@ CreateThread(function()
                                     TriggerEvent('esx:restoreLoadout')
 							        --ESX.SetPlayerData('ped', PlayerPedId())
                                 end
-                            end, "tattooshop")
+                            end, "TattooShops",currentZone)
 						else
 							ESX.SetPlayerData('ped', PlayerPedId())
                             TriggerEvent('esx:restoreLoadout')
@@ -298,7 +315,7 @@ RegisterNetEvent('fivem-appearance:clothingMenu', function()
                     TriggerEvent('esx:restoreLoadout')
                     ESX.SetPlayerData('ped', PlayerPedId())
                 end   
-            end, "clotheshop")
+            end, "ClothingShops",currentZone)
         else
 			ESX.SetPlayerData('ped', PlayerPedId()) -- Fix for esx legacy
             TriggerEvent('esx:restoreLoadout')
