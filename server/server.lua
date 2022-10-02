@@ -108,13 +108,25 @@ ESX.RegisterServerCallback('esx_skin:getPlayerSkin', function(source, cb)
 		cb(appearance, jobSkin)
 	end)
 end)
+function getcost(param,Zone)
+	if param and Zone then
 
+		for k,v in pairs(Config[param]) do
+			print(k)
+			print(v.price)
+			print(Zone)
+			if k == Zone then
+				return (v.price)
+			end
+		end
+	end
+end
 ESX.RegisterServerCallback('fivem-appearance:payfee', function(source, cb, param)
     local xPlayer = ESX.GetPlayerFromId(source)
     local money = xPlayer.getMoney()
 
     if param then
-        local cost = Config.Price[param]
+        local cost = getcost(param,Zone)
         if money >= cost then
             if cost > 0 then
                 xPlayer.removeMoney(cost)
