@@ -73,7 +73,7 @@ Config.ClothingShops = {
 		type = 73, -- The Blip type. List: https://docs.fivem.net/docs/game-references/blips/#blips
 		color = 47, -- The Blip color. List: https://docs.fivem.net/docs/game-references/blips/#blip-colors
         distance = 7, -- Distance to show text ui prompt
-		scale = 0.7 -- How big the blip should be
+		scale = 0.7, -- How big the blip should be
 		jobs = false,		--allowed jobs and put false for public and jobs will always be like ('jobname','jobname')
 		price = 100 , 		-- price can b 0 
     },
